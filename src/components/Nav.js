@@ -4,7 +4,14 @@ import {Link, IndexLink} from 'react-router'
 class Nav extends React.Component{
   onSearch(e){
     e.preventDefault();
-    alert("no imprementado todavia");
+
+    var location =this.refs.search.value;
+
+    var encodolocation= encodeURIComponent(location);
+    if(location.length>0){
+      this.refs.search.value="";
+      window.location.hash="#/?location="+ encodolocation;
+    }
   }
   render(){
     return(
@@ -20,7 +27,7 @@ class Nav extends React.Component{
         <div className="top-bar-right">
           <form onSubmit={this.onSearch.bind(this)}>
             <ul className="menu">
-              <li><input type="search" placeholder="Search Weather"/></li>
+              <li><input type="search" placeholder="Search Weather by city" ref="search"/></li>
               <li><button type="submit" className="button" value="get Weather">Search</button></li>
             </ul>
         </form>
@@ -31,11 +38,3 @@ class Nav extends React.Component{
 }
 
 export default Nav
-
-
-      // <div>
-      //   <h3>nav component</h3>
-      //   <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight:'bold'}}>Get Wather</IndexLink>
-      //   <Link to="/about" activeClassName="active" activeStyle={{fontWeight:'bold'}}>About</Link>
-      //   <Link to="/examples"activeClassName="active" activeStyle={{fontWeight:'bold'}}>Examples</Link>
-      // </div>

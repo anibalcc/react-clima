@@ -7,9 +7,7 @@
   import About from './components/About'
   import Examples from './components/Examples'
 
-  var obj = {
-    name: 'Anibal'
-  }
+import styles from './styles/app.scss'
 
   ReactDOM.render(
     <Router history={hashHistory}>

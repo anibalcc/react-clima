@@ -5,7 +5,7 @@ class Examples extends React.Component{
   render(){
     return(
       <div>
-        <h2 className="text-center">          Examples hola        </h2>
+        <h2 className="text-center page-title">          Examples hola        </h2>
         <p>Here are a few examples locations to try out</p>
         <ol>
           <li>
